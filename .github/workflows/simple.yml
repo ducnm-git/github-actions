@@ -13,8 +13,9 @@ jobs:
           echo "Vkl!"
       - name: python command
         run: |
-          import platform
-          print(platform.processor())
+          import platform 
+          print
+          (platform.processor())
         shell: python
   run-windows-command:
     runs-on: windows-latest
