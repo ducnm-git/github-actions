@@ -11,6 +11,10 @@ jobs:
           node -v
           npm -v
           echo "Vkl!"
+      - name: python command
+        run: |
+          import platform
+          print(platform.processor())
   run-windows-command:
     runs-on: windows-latest
     steps:
