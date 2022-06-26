@@ -1,8 +1,28 @@
 name: Actions Workflow
 # on: [push, pull_request]
 on:
-  repository_dispatch:
-    types: [build]
+  push:
+    branches:
+      - "main"
+      - "feature/*" # matches featur/featA, feature/featB, doesn't match feature/feat/a
+      # - "feature/**" # matches featur/featA, feature/featB, match feature/feat/a
+      - "!feature/vaiCuc"
+
+    # Example: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
+    # branches-ignore:
+    #   - null
+    # tags:
+    #   - "latest"
+    # tags-ignore:
+    #   - null
+    # paths:
+    #   - "**.js"
+    #   - "!filename.js"
+    # paths-ignore:
+    #   - null
+
+  # repository_dispatch:
+  #   types: [build]
 
   # schedule:
   #   - cron: "0/5 * * * *"
