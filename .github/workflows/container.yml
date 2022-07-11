@@ -1,0 +1,17 @@
+name: Container
+on: push
+
+jobs:
+  node-docker:
+    runs-on: ubuntu-latest
+    container: 
+      image: node:lts-alpine
+      # volumes:
+      # options: 
+    steps:
+      - name: Log node version
+        run: |
+          node -v
+          [[ -f "/etc/os-release" ]] && cat /etc/os-release
+          
+
