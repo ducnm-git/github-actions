@@ -31,9 +31,8 @@ jobs:
       - name: Sent a slack message
         uses: docker://technosophos/slack-notify
         env: 
-          GITHUB_CONTEXT: ${{ toJson(github) }}
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_MESSAGE: "Hello slack `echo $GITHUB_CONTEXT`"
+          SLACK_MESSAGE: "Hello slack `from github-action workflow`"
           SLACK_TITLE: "Message from above"
           SLACK_COLOR: "#0000ff"
           
