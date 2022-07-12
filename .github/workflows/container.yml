@@ -25,9 +25,7 @@ jobs:
         uses: docker://node:18.5-alpine3.15
         with:
           entrypoint: ./script.sh
-          args:
-            - "-v"
-            - "hehe"
+          args: -v -c hehe
           
   node-docker:
     runs-on: ubuntu-latest
