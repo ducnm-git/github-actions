@@ -33,8 +33,9 @@ jobs:
         env: 
           GITHUB_CONTEXT: ${{ toJson(github) }}
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_MESSAGE: "Hello slack ${GITHUB_CONTEXT}"
-
+          SLACK_MESSAGE: "Hello slack `echo $GITHUB_CONTEXT`"
+          SLACK_TITLE: "Message from above"
+          SLACK_COLOR: "#0000ff"
           
   node-docker:
     runs-on: ubuntu-latest
